@@ -1,0 +1,64 @@
+<div class="container">
+    <div class="left" style="width: fit-content; height:fit-content ">
+        <img src="/assets/pic.png" height="700px" width="750px">
+    </div>
+<div class="wrapper" >
+    <div class="title" style="margin-bottom: 50px;">User Registration</div>
+    <form action="#">
+        <div class="user-details">
+            <div class="input-box">
+                <span class="details">First Name</span>
+                <input type="text" placeholder="Enter your first name" name="firstName"  [(ngModel)]="user.firstName" >
+            </div>
+            <div class="input-box">
+                <span class="details">Last Name</span>
+                <input type="text" placeholder="Enter your last name" name="lastName" [(ngModel)]="user.lastName">
+            </div>
+            <div class="input-box">
+                <span class="details">User Name</span>
+                <input type="text" placeholder="Enter your username" name="userName" [(ngModel)]="user.userName" >
+            </div>
+            <div class="input-box">
+                <span class="details">Mail</span>
+                <input type="text" placeholder="Enter your Email" name="email"  [(ngModel)]="email" >
+            </div>
+          
+            <div class="input-box">
+                <span class="details">Password</span>
+                <input type="password" placeholder="Enter your Password" name="userPassword" [(ngModel)]="user.userPassword" >
+            </div>
+            <div class="input-box">
+                <span class="details">Confirm Password</span>
+                <input type="password" placeholder="Confirm your Password" name="userPassword1" [(ngModel)]="userPassword1" >
+            </div>
+            <div class="input-box">
+                <span class="details">Phone Number</span>
+                <input type="text" placeholder="Enter your number" name="contactNumber" [(ngModel)]="contactNumber" >
+            </div>
+        </div>
+        <div class="gender-details">
+            <input type="radio" name="gender" value="Male" [(ngModel)]="user.gender" id="dot-1">
+            <input type="radio" name="gender" value="Female" [(ngModel)]="user.gender" id="dot-2">
+            <input type="radio" name="gender" value="Other" [(ngModel)]="user.gender" id="dot-3">
+            <span class="gender-title">Gender</span>
+            <div class="category">
+                <label for="dot-1">
+                    <span class="dot one"></span>
+                    <span class="gender">Male</span>
+                </label>
+                <label for="dot-2">
+                    <span class="dot two"></span>
+                    <span class="gender">Female</span>
+                </label>
+                <label for="dot-3">
+                    <span class="dot three"></span>
+                    <span class="gender">Other</span>
+                </label>
+            </div>        
+        </div>
+        <div class="button">
+            <input type="submit" (click)="onSubmit()" value="Register">
+        </div>
+    </form>
+</div>
+</div>

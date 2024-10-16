@@ -1,0 +1,33 @@
+
+<div class="container">
+    
+    <div class="left-section"></div>
+    
+    <div class="right-section">
+        
+        <div class="login-container">
+
+            <form class="login-form" [formGroup]="myForm" (ngSubmit)="onClick()">
+                <h2 class="login-title"><i class="fas fa-user-circle"></i> Login</h2>
+                <div class="form-control">
+                    <i class="fas fa-user icon"></i>
+                    <input type="text" placeholder="Username" id="userName" name="userName" formControlName="userName" required>
+                </div>
+                <div class="form-control">
+                    <i class="fas fa-lock icon"></i>
+                    <input type="password" placeholder="Password" id="userPassword" name="userPassword" formControlName="userPassword" >
+                </div>
+                <div class="remember-me">
+                   
+                    <label for="rememberMe" style="text-decoration: none;" >
+                         <a href="/Registration" >Create Account </a>
+                        </label>
+                    
+                </div>
+                
+               
+                <button type="submit">Login</button>
+            </form>
+        </div>
+    </div>
+</div>
