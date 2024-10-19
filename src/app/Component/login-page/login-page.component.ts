@@ -39,11 +39,7 @@ backEndMessages ?: String;
     console.log(this.myForm.value);
     this.userService.getUserUserNameAndUserPassword(this.myForm.value).subscribe(
       (response: string) => {
-        this.backEndMessages = response;
-        Swal.fire('', response, 'success');
-       
-       console.log(response)
-       switch(response) {
+         switch(response) {
         case " Successfully logged in":
 
         const sessionData = {

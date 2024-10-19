@@ -21,7 +21,8 @@ export class LogOutComponent {
     email:''
   }
   user1 : User[]=[];
-
+  stat?:Boolean;
+back?:StreamPipeOptions;
 
   constructor(private router: Router, private userService: UserService) {
     this.getuser();
@@ -57,7 +58,12 @@ export class LogOutComponent {
       this.userService.getUser(userName).subscribe(
         (response) => {
           if (response && response.payload && response.payload.length > 0) {
-            this.user = response.payload[0];  // Assuming payload[0] is an array of users
+            this.user = response.payload[0]; 
+            this.stat =response.status;
+            this.back = response.commonMessage;
+            
+
+             // Assuming payload[0] is an array of users
 
             console.log('User details fetched successfully:', this.user);
           } else {

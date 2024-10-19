@@ -26,6 +26,8 @@ email:'',
   contactNumber: string = '';
     userPassword1?:String;
     email:string='';
+    stat?:Boolean;
+
 
   constructor( private userService : UserService, private router : Router ){}
 
@@ -74,9 +76,17 @@ email:'',
       this.user.contact = this.contactNumber;
       this.user.email = this.email;
       this.userService.saveUser(this.user).subscribe(
-        data => {
-          Swal.fire('', 'User Registered Successfully!', 'success');
-          this.router.navigate(['/Login']); 
+         (response) => {
+        this.stat = response.status;
+        console.log(this.stat)
+        switch(this.stat){
+      case true :
+        Swal.fire('', 'Successfully User Register', 'success');
+        this.router.navigate(['/Login']); 
+        break;
+          default :
+          Swal.fire('', 'This password is Using Someone', 'error');
+        }
 
         },
         err => {
